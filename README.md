@@ -1,6 +1,6 @@
 # Drude Drupal 7 Starter 
 
-This is an empty Drude Drupal 7 installation. Git pull your existing site into /docroot  
+An empty Drude installation for Drupal 7 sites. Git pull your existing site into /docroot  
 
 TODO: Edit Everything after this line
 
