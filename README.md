@@ -1,6 +1,8 @@
 # Drude powered Drupal 7 Installation
 
-This is a sample vanilla Drupal 7 installation pre-configured for use with Drude.  
+This is an empty Drude Drupal 7 installation. Git pull your existing site into /docroot  
+
+TODO: Edit Everything after this line
 
 Features:
 
@@ -88,30 +90,4 @@ Then run Behat tests:
 
 ```
 dsh behat
-```
-
-
-## Drupal multisite example
-
-There are two additional sites configured in this project:
-
- - drupal7-site1.drude
- - drupal7-site2.drude
-
-To install them 
-
-1. Uncomment the following block in [.drude/commands/init](.drude/commands/init):
-
-    ```
-    # Uncomment line below to install site 1
-    db_create 'site1' && site_install 'drupal7-site1.drude'
-    # Uncomment line below to install site 2
-    db_create 'site2' && site_install 'drupal7-site2.drude'
-    ```
-
-2. Run `dsh init` again
-3. **On Windows** add both domains to your hosts file 
-
-```
-192.168.10.10	drupal7-site1.drude drupal7-site2.drude
 ```
