@@ -1,4 +1,4 @@
-# Drude powered Drupal 7 Installation
+# Drude Drupal 7 Starter 
 
 This is an empty Drude Drupal 7 installation. Git pull your existing site into /docroot  
 
