@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+## Print the URL of the current project -- http://VIRTUAL_HOST
+## Usage:   dsh vhost
+## Parameters:
+##      none
+
+grep VIRTUAL_HOST "$YML_PATH"/docker-compose.yml | head -n 1 | sed 's/    - VIRTUAL_HOST=/http:\/\//g' | sed 's/,/ http:\/\//g'
