@@ -6,7 +6,7 @@ set -e
 # Set to the appropriate site directory ##
 SITE_DIRECTORY='default'
 # Set to the appropriate site directory
-SITE_DOMAIN='drupal7.drude'
+SITE_DOMAIN='shankitunk.drude'
 # Set to the appropriate site alias for the DB source
 #SOURCE_ALIAS='@none'
 
@@ -82,13 +82,13 @@ init_settings ()
 
   # docker-compose
   _copy_settings_file ".drude/drude-local-minimal.yml" "docker-compose.yml"
-  
+
   # Drupal
   #_copy_settings_file "docroot/sites/example.sites.local.php" "docroot/sites/sites.local.php"
-  _copy_settings_file "docroot/sites/${SITE_DIRECTORY}/example.settings.local.php" "docroot/sites/${SITE_DIRECTORY}/settings.local.php"
-  _copy_settings_file "docroot/sites/site1/example.settings.local.php" "docroot/sites/site1/settings.local.php"
-  _copy_settings_file "docroot/sites/site2/example.settings.local.php" "docroot/sites/site2/settings.local.php"
-  
+  _copy_settings_file ".drude/example.settings.local.php" "docroot/sites/${SITE_DIRECTORY}/settings.local.php"
+  #_copy_settings_file "docroot/sites/site1/example.settings.local.php" "docroot/sites/site1/settings.local.php"
+  #_copy_settings_file "docroot/sites/site2/example.settings.local.php" "docroot/sites/site2/settings.local.php"
+
   # Behat
   _copy_settings_file 'tests/behat/behat.yml.dist' 'tests/behat/behat.yml'
 }
@@ -211,11 +211,6 @@ sleep 10
 echo -e "${green_bg} Step 3 ${NC}${green} Installing site...${NC}"
 site_install "My Drupal 7 Site"
 
-# Uncomment line below to install site 1
-#db_create 'site1' && site_install 'drupal7-site1.drude'
-# Uncomment line below to install site 2
-#db_create 'site2' && site_install 'drupal7-site2.drude'
-
 # Examples of other things that can be done.
 #db_import
 #db_updates
@@ -226,8 +221,6 @@ site_install "My Drupal 7 Site"
 if is_windows; then
 	echo-green "Add ${SITE_DOMAIN} to your hosts file (/etc/hosts), e.g.:"
 	echo-green "192.168.10.10  ${SITE_DOMAIN}"
-	echo-green "Alternatively configure wildcard DNS resolution and never edit the hosts file again! Instructions:"
-	echo-green "https://github.com/blinkreaction/boot2docker-vagrant/blob/develop/docs/networking.md#dns-resolution"
 	echo
 fi
 

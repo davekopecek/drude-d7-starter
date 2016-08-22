@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+## Print the URL of the current project -- http://VIRTUAL_HOST
+## Usage:   dsh add-local-settings
+## Parameters:
+##      none
+## printenv
+
+# Copy a settings file from $source to $dest
+# Skips if the $dest already exists.
+_copy_settings_file()
+{
+  local source=${1}
+  local dest=${2}
+
+  if [[ ! -f $dest ]]; then
+    echo "Copying ${dest}..."
+    cp "$source" "$dest"
+  else
+    echo-yellow "${dest} already in place"
+  fi
+}
+
+DRUPAL_SETTINGS="$PROJECT_ROOT/docroot/sites/default/settings.php"
+LOCAL_SETTINGS="$PROJECT_ROOT/docroot/sites/default/settings.local.php"
+LOCAL_SETTINGS_DEFAULT="$PROJECT_ROOT/.drude/example.settings.local.php"
+LOCAL_SETTINGS_SNIPPET="$PROJECT_ROOT/.drude/local-settings-snippet.php"
+
+_copy_settings_file "$LOCAL_SETTINGS_DEFAULT" "$LOCAL_SETTINGS"
+
+
+ if ! grep -q local_conf_file_path $DRUPAL_SETTINGS ; then
+   cat "$LOCAL_SETTINGS_SNIPPET" >> "$DRUPAL_SETTINGS"
+  echo Local settings snipped appended to settings.php
+ else
+  echo Local settings snippet already included in settings.php
+ fi
