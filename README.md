@@ -2,14 +2,15 @@
 
 An empty Drude installation for Drupal 7 sites. Git pull your existing site into /docroot  
 
-TODO: Edit Everything after this line
-
 Features:
 
-- Vannila Drupal 7
-- `dsh init` example
-- Drupal multisite example
+- Empty /docroot folder for existing D7 project
+- customized `dsh init` 
+- `dsh add-local-settings` script 
+- `dsh vhost` script
 - Behat setup example and sample tests
+
+TODO: Edit Everything after this line
 
 ## Setup instructions
 
