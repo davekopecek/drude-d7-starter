@@ -1,0 +1,8 @@
+# Ignore docroot. It will contain it's own git repo
+docroot/
+
+# Exclude local docker-compse.yml
+docker-compose.yml
+
+# IDEs
+.idea
