@@ -6,7 +6,7 @@ set -e
 # Set to the appropriate site directory ##
 SITE_DIRECTORY='default'
 # Set to the appropriate site directory
-SITE_DOMAIN='shankitunk.drude'
+SITE_DOMAIN='mynewsite.drude'
 # Set to the appropriate site alias for the DB source
 #SOURCE_ALIAS='@none'
 
