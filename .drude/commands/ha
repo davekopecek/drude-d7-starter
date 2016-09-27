@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+## Happy Admin - reset admin password to abc123
+## Usage:   dsh ha
+## Parameters:
+##      none
+
+dsh drush upwd admin --password="abc123"
